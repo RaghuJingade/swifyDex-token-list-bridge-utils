@@ -3,9 +3,6 @@
 ## Description
 This package contains utility functions used for converting an L1 token list into a cross-chain tokenlist by adding cross-chain mapping information for Arbitrum, Optimism, and Polygon to a given L1 list.
 
-Mappings get added in the form of an extensions field, following this [schema](https://github.com/Uniswap/token-lists/issues/51#issuecomment-952268629).
-(Currently does not fill information for origin and destination bridge addresses)
-
 ex:
 
       "name": "Uniswap",
@@ -51,13 +48,6 @@ ex. for Optimism:
 
 ## Functions Overview
 
-chainify
-
- * Adds bridgeInfo to the given token list for Optimism, Polygon and Arbitrum.
- * @param l1TokenListOrPathOrUrl
- * @returns TokenList with l2 bridgeInfo filled
-
-
 chainifyTokenList
 
  * Given a chain ID (Optimism, Polygon, or Arbitrum) and a TokenList, returns the TokenList with `extensions` filled.
@@ -72,48 +62,19 @@ mergeTokenLists
  * @param secondary secondary token list
  * @returns merged token list
 
+
+
 ## Usage (from external package):
 ### Install Package
-`yarn add @uniswap/token-list-bridge-utils`
+`yarn add swifydex-token-list-bridge-utils`
 
 or
 
-`npm i @uniswap/token-list-bridge-utils`
+`npm i swifydex-token-list-bridge-utils`
 
-### Create .env file (Optional)
-- By default, the library uses `https://rpc.ankr.com/eth` as the MAINNET_RPC env variable value required by arbitrum-sdk. You can override this value by creating a .env file in your root directory and setting a value for MAINNET_RPC.
-
-  - Sample .env file contents:
-
-    `MAINNET_RPC="https://mainnet.infura.io/v3/<infura key>"`
-- Note: If this is not set correctly, the library will throw a NETWORK_ERROR error code.
-
-### Call Function
-#### CommonJS
-`const bridge_utils  = require('@uniswap/token-list-bridge-utils');`
-
-`let chainifiedList = await bridge_utils.chainify(tokenList);`
-#### ESM
-`import { chainify } from '@uniswap/token-list-bridge-utils';`
-
-`let chainifiedList = await chainify(tokenList);`
 
 ## Run Tests
 
 `yarn install`
 
 `yarn test`
-
-## DTS User Guide
-
-DTS scaffolds your new library inside `/src`.
-
-To run DTS, use:
-
-```bash
-npm start # or yarn start
-```
-
-This builds to `/dist` and runs the project in watch mode so any edits you save inside `src` causes a rebuild to `/dist`.
-
-To do a one-off build, use `npm run build` or `yarn build`.

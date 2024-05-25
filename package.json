@@ -1,13 +1,13 @@
 {
-  "author": "Justin Domingue",
+  "author": "R J",
   "devDependencies": {
     "@tsconfig/recommended": "^1.0.1",
     "@types/jest": "^27.4.1",
     "@types/lodash": "^4.14.196",
-    "@uniswap/token-lists": "^1.0.0-beta.33",
     "dts-cli": "^1.4.0",
     "eslint-plugin-prettier": "^5.0.0",
     "husky": "^7.0.4",
+    "swifydex-token-lists": "^1.0.0",
     "ts-jest": "^29.1.1",
     "tslib": "^2.3.1",
     "typescript": "^5.1.6",
@@ -31,7 +31,7 @@
   "license": "GPL-3.0-or-later",
   "main": "dist/index.js",
   "module": "dist/token-list-bridge-utils.esm.js",
-  "name": "@uniswap/token-list-bridge-utils",
+  "name": "swifydex-token-list-bridge-utils",
   "prettier": {
     "printWidth": 80,
     "semi": false,
@@ -47,16 +47,16 @@
     "deduplicate": "yarn-deduplicate --strategy=highest"
   },
   "typings": "dist/index.d.ts",
-  "version": "2.3.0",
+  "version": "1.0.0",
   "dependencies": {
     "@arbitrum/sdk": "^3.1.6",
-    "@uniswap/sdk-core": "^4.0.6",
     "axios": "^0.26.0",
     "dotenv": "^16.0.1",
     "ethers": "^5.6.5",
     "lodash": "^4.17.21",
     "lodash-es": "^4.17.21",
     "prettier": "^3.0.1",
+    "swifydex-sdk-core": "^1.0.3",
     "web3": "^1.7.3"
   }
 }

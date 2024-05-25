@@ -1,4 +1,4 @@
-import { TokenInfo } from '@uniswap/token-lists'
+import { TokenInfo } from 'swifydex-token-lists'
 import { chainify, chainifyTokenList, mergeTokenLists } from '.'
 import { ChainId } from './constants/chainId'
 import {
